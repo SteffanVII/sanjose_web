@@ -1,0 +1,70 @@
+@import "../styles/sass-globals";
+
+.nav-link, .nav-link-show {
+
+    position: relative;
+
+    display: flex;
+    flex-flow: column;
+    align-items: flex-end;
+
+    a, .nav-link-dropdown-title {
+
+        width: fit-content;
+
+        color: black;
+        text-decoration: none;
+
+        transition: transform 0.2s;
+
+        cursor: pointer;
+
+        &:hover {
+            transform: translateX(-5px);
+        }
+    }
+
+    .nav-link-dropdown {
+
+        position: absolute;
+        top: 0;
+        right: calc(100% + 20px);
+        transform: translateY(10px);
+
+        display: flex;
+        flex-flow: column;
+        gap: 10px;
+
+        padding: 15px;
+
+        width: 200px;
+
+        opacity: 0;
+        visibility: hidden;
+
+        background-color: white;
+
+        box-shadow: $drop-shadow-default;
+
+        // outline: 1px solid red;
+
+        transition: transform 0.2s,
+                    opacity 0.2s,
+                    visibility 0s 0.2s;
+    }
+    
+}
+
+.nav-link-show {
+
+    .nav-link-dropdown {
+
+        transform: translateY(0px);
+        opacity: 1;
+        visibility: visible;
+
+        transition: transform 0.2s,
+                    opacity 0.2s;
+    }
+
+}

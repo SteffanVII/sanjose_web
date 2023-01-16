@@ -1,0 +1,204 @@
+#document-request-portal-page {
+
+    main {
+
+
+        form {
+
+            position: relative;
+
+            display: flex;
+            flex-flow: column;
+            gap: 10px;
+
+            .fieldset-container {
+                display: flex;
+                flex-flow: column;
+                gap: 10px;
+
+                border: none;
+            }
+
+            button {
+                padding: 10px 15px;
+
+                border: 1px solid black;
+
+                background-color: transparent;
+
+                transition: background-color 0.2s,
+                            color 0.2s;
+
+                &:hover:enabled {
+                    background-color: black;
+                    color: white;
+                }
+
+                &:active:enabled {
+                    background-color: transparent;
+                    color: black;
+
+                    transition: none;
+                }
+
+                &:disabled {
+                    border-color: gray;
+                    color: gray;
+                }
+            }
+            
+            .note {
+                font-size: 0.7rem;   
+                font-weight: 600; 
+            }
+
+            .fieldset-notes {
+
+                padding: 20px;
+                margin: 20px 0 20px 0;
+
+                border: 1px solid black;
+
+            }
+
+            .splitter {
+
+                position: relative;
+
+                display: grid;
+                grid-template-columns: min-content 1fr;
+                gap: 10px;
+
+                .split-left {
+                    width: fit-content;
+                }
+
+                .split-right {
+                    display: flex;
+                    flex-flow: column;
+                    gap: 10px;
+                    width: 100%;
+                }
+
+            }
+
+            .fieldset-btns {
+
+                display: flex;
+                gap: 10px;
+
+                padding-top: 20px;
+            }
+            
+
+            .amp {
+                color: red;
+            }
+            
+            select {
+                padding: 10px;
+            }
+
+            input {
+                padding: 5px;
+            }
+
+            textarea {
+                height: 150px;
+
+                padding: 10px;
+                resize: none;
+            }
+
+            fieldset {
+                padding: 20px;;
+
+                .name-inputs {
+
+                    display: flex;
+                    flex-flow: column;
+                    gap: 10px;
+
+                    width: fit-content;
+
+                    input[type=text] {
+                        width: 200px;
+                    }
+                }
+
+                .collection-first {
+                    display: flex;
+                    gap: 10px;
+                }
+
+                .email-wrapper, .phone-wrapper, .birthdate-wrapper {
+                    display: flex;
+                    flex-flow: column;
+                    gap: 10px;
+                }
+
+                .birthdate-wrapper {
+                    gap: 8px;
+                }
+
+                .purpose-wrapper {
+                    display: flex;
+                    flex-flow: column;
+                    gap: 10px;
+
+                    .max-char {
+                        font-size: 0.7rem;
+                    }
+                }
+            }
+
+            .response-id-container {
+                position: absolute;
+                top: 0;
+                left: 0;
+
+                width: 100%;
+                height: 100%;
+
+                padding: 20px;
+
+                background-color: white;
+
+                visibility: hidden;
+
+                button {
+                    float: right;
+                }
+
+                .code-wrapper {
+                    width: fit-content;
+                    height: fit-content;
+                    span {
+                        position: absolute;
+                        top: 50%;
+                        left: 50%;
+                        transform: translate(-50%, -50%);
+    
+                        padding: 20px;
+    
+                        background-color: black;
+                        color: white;
+    
+                        font-size: 2.5rem;
+                        font-weight: 700;
+
+                        cursor: pointer;
+                    }
+                }
+
+
+                &.show {
+                    visibility: visible;
+                }
+            }
+
+        }
+
+    }
+
+}

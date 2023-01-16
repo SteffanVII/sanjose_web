@@ -1,0 +1,104 @@
+#check-request-status-page {
+
+    form {
+
+        width: 100%;
+
+        display: flex;
+        flex-flow: column;
+        gap: 10px;
+        align-items: center;
+
+        padding: 40px 0 40px 0;
+
+        .id-input-wrapper {
+            width: 200px;
+            height: fit-content;
+
+            display: flex;
+            flex-flow: column;
+            align-items: center;
+            gap: 10px;
+
+            input[type=text] {
+                padding: 10px;
+                text-align: center;
+            }
+        }
+
+        .result-container {
+            width: 100%;
+
+            display: flex;
+            justify-content: center;
+
+            .result-wrapper {
+
+                position: relative;
+                
+                width: 100%;
+                max-width: 600px;
+                
+                padding: 20px;
+                
+                display: flex;
+                flex-flow: column;
+                gap: 10px;
+                
+                border: 1px solid black;
+                
+                .request-id {
+
+                    position: absolute;
+                    top: 20px;
+                    right: 20px;
+
+                    width: fit-content;
+
+                    padding: 10px;
+                    margin-left: auto;
+
+                    border-radius: 4px;
+
+                    font-weight: 700;
+                    color: white;
+                    background-color: gray;
+
+                }
+                
+                .request-status {
+                    
+                    padding: 10px;
+                    font-weight: 700;
+                    border-radius: 4px;
+
+                    // background-color: black;
+
+                    &.stat-0 {
+                        background-color: #F8A84A;
+                    }
+                    &.stat-1 {
+                        background-color: #8bcafe;
+                    }
+                    &.stat-2 {
+                        background-color: #f0ef8d;
+                    }
+                    &.stat-3 {
+                        background-color: #4af87e;
+                    }
+                    &.stat-4 {
+                        background-color: #f28c8c;
+                    }
+
+                }
+
+                .result-lb {
+                    font-size: 0.7rem;
+                }
+
+            }
+
+        }
+    }
+
+}
