@@ -5,7 +5,8 @@ import styles from "./../styles/Banners.module.scss";
 const bannersActions = {
     SET : 0,
     NAVIGATORS : 1,
-    NAVIGATE : 2
+    NAVIGATE : 2,
+    AUTONAVIGATE : 3
 }
 
 function bannersReducer( state, action ) {
@@ -20,11 +21,20 @@ function bannersReducer( state, action ) {
         case bannersActions.NAVIGATORS:
 
             state.navigators = Array.from(action.payload).map( ( e, i ) => <div className={styles[`banner-navigator${state.position === i ? `-active` : ``}`]} onClick={() => e.onclick(i)} ></div> );
+            
+            return {...state};
+            
+        case bannersActions.NAVIGATE:
+            
+                state.position = action.payload;
+                state.pauseAuto = true;
 
             return {...state};
 
-        case bannersActions.NAVIGATE:
-            state.position = action.payload;
+        case bannersActions.AUTONAVIGATE:
+
+                state.position = action.payload;
+                state.pauseAuto = false;
 
             return {...state};
     
@@ -39,11 +49,14 @@ function Banners() {
         paths : [],
         imgs : [],
         navigators : [],
-        position : 0
+        position : 0,
+        pauseAuto : false
     } )
 
     const rootElement = useRef(null);
     const imgsContainer = useRef(null);
+
+    const stateRef = useRef(state);
 
     useEffect(() => {
         fetchBanners( ( status, response ) => {
@@ -54,6 +67,27 @@ function Banners() {
                 } )
             }
         } )
+
+        let bannersInterval = setInterval( () => {
+            if ( stateRef.current.paths.length > 0 && !stateRef.current.pauseAuto ) {
+                if ( stateRef.current.position == stateRef.current.paths.length - 1 ) {
+                    dispatch({
+                        type : bannersActions.AUTONAVIGATE,
+                        payload : 0
+                    });
+                } else {
+                    dispatch({
+                        type : bannersActions.AUTONAVIGATE,
+                        payload : stateRef.current.position + 1
+                    });
+                }
+            }
+        }, 5000 );
+
+        return () => {
+            clearInterval(bannersInterval);
+        }
+
     }, []);
 
     useEffect(() => {
@@ -66,6 +100,19 @@ function Banners() {
                         type : bannersActions.NAVIGATE,
                         payload : i
                     });
+                    setTimeout(() => {
+                        if ( stateRef.current.position == stateRef.current.paths.length - 1 ) {
+                            dispatch({
+                                type : bannersActions.AUTONAVIGATE,
+                                payload : 0
+                            });
+                        } else {
+                            dispatch({
+                                type : bannersActions.AUTONAVIGATE,
+                                payload : stateRef.current.position + 1
+                            });
+                        }
+                    }, 20000);
                 } };
             } )
         })
@@ -74,6 +121,8 @@ function Banners() {
             left : state.position * rootElement.current.clientWidth,
             behavior : 'smooth'
         } );
+
+        stateRef.current = state;
 
     }, [state.position, state.paths]);
 

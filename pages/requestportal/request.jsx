@@ -41,7 +41,7 @@ function requestPortalReducer( state, action ) {
         case requestPortalActions.ID:
 
             state.id = action.payload;
-            console.log(state.id);
+            state.inputs = barangayClearanceInputs();
 
             return {...state};
     
@@ -53,6 +53,11 @@ function requestPortalReducer( state, action ) {
 function barangayClearanceInputs() {
 
     return <fieldset>
+                <div className={styles['fieldset-notes']}>
+                    <span className={styles['note']} >Note :  Please bring the documents required for getting Barangay Clearance.</span> <br />
+                    <span className={styles['note']}>- <strong>Latest Valid ID</strong></span> <br />
+                    <span className={styles['note']}>- <strong>25 PHP</strong></span>
+                </div>
                 <div className={styles['splitter']}>
                     <div className={styles['split-left']}>
                         <div className={styles['name-inputs']} >
@@ -80,6 +85,10 @@ function barangayClearanceInputs() {
                                 <label htmlFor="phone">Phone Number : </label>
                                 <input type="tel" pattern="09[0-9]{9}" id="phone" placeholder="09XXXXXXXXX"/>
                             </div>
+                            <div className={styles['purok-wrapper']}>
+                                <label htmlFor="purok">Purok Number : <span className={styles['amp']} >*</span></label>
+                                <input type="number" id="purok" placeholder="Purok Number" required/>
+                            </div>
                         </div>
                         <div className={styles['purpose-wrapper']}>
                             <label htmlFor="purpose">Purpose : </label>
@@ -87,11 +96,6 @@ function barangayClearanceInputs() {
                             <span className={styles['max-char']} >Max 512 characters</span>
                         </div>
                     </div>
-                </div>
-                <div className={styles['fieldset-notes']}>
-                    <span className={styles['note']} >Note :  Please bring the documents required for getting Barangay Clearance.</span> <br />
-                    <span className={styles['note']}>- <strong>Latest Valid ID</strong></span> <br />
-                    <span className={styles['note']}>- <strong>25 PHP</strong></span>
                 </div>
                 <div className={styles["fieldset-btns"]}>
                     <button type="reset" >Reset</button>
@@ -104,6 +108,16 @@ function barangayClearanceInputs() {
 function bussinessClearanceInputs() {
 
     return <fieldset>
+                <div className={styles['fieldset-notes']}>
+                    <span className={styles['note']} >Note : Please use the name of the owner showing in the DTI registration. <br /></span>
+                    <span className={styles['note']} >Note : Please bring the documents required for getting Bussiness Clearance <br />
+                    - <strong>Barangay Clearance</strong><br />
+                    - <strong>Certificate of Registration</strong><br />
+                    - <strong>Contract of Lease</strong>, if you are leasing your bussiness area, however if you own the place, a copy of the 
+                     <strong> Transfer Certificate of Title (TCT)</strong> or <strong>Tax Decleration</strong> is what you would provide.
+                    - <strong>Certificate of Occupancy</strong>
+                    </span>
+                </div>
                 <div className={styles['splitter']}>
                     <div className={styles['split-left']}>
                         <div className={styles['name-inputs']} >
@@ -132,17 +146,17 @@ function bussinessClearanceInputs() {
                                 <input type="tel" pattern="09[0-9]{9}" id="phone" placeholder="09XXXXXXXXX"/>
                             </div>
                         </div>
+                        {/* <label htmlFor="owner-name">Owner Name : <span className={styles['amp']} >*</span></label>
+                        <input type="text" id="owner-name" placeholder="Name of the owner showing in the DTI registration" /> */}
+                        <label htmlFor="bussiness-name">Bussiness Name : <span className={styles['amp']} >*</span></label>
+                        <input type="text" id="bussiness-name" placeholder="Name of the Bussiness" required/>
+                        <label htmlFor="bussiness-address">Bussiness Address : <span className={styles['amp']} >*</span></label>
+                        <input type="text" id="bussiness-address" placeholder="Address of the Bussiness" required/>
+                        <label htmlFor="bussiness-description">Bussiness Description : <span className={styles['amp']} >*</span></label>
+                        <input type="text" id="bussiness-description" placeholder="Nature of the Bussiness" required/>
                     </div>
                 </div>
-                <div className={styles['fieldset-notes']}>
-                    <span className={styles['note']} >Note : Please bring the documents required for getting Bussiness Clearance <br />
-                    - <strong>Barangay Clearance</strong><br />
-                    - <strong>Certificate of Registration</strong><br />
-                    - <strong>Contract of Lease</strong>, if you are leasing your bussiness area, however if you own the place, a copy of the 
-                     <strong> Transfer Certificate of Title (TCT)</strong> or <strong>Tax Decleration</strong> is what you would provide.
-                    - <strong>Certificate of Occupancy</strong>
-                    </span>
-                </div>
+
                 <div className={styles["fieldset-btns"]}>
                     <button type="reset" >Reset</button>
                     <button type="submit" >Request</button>
@@ -154,6 +168,12 @@ function bussinessClearanceInputs() {
 function certificateOfResidencyInputs() {
 
     return <fieldset>
+                <div className={styles['fieldset-notes']}>
+                    <span className={styles['note']} >Note : Please bring the documents required for getting Certificate of Residency <br />
+                    - <strong>Cedula</strong><br />
+                    - <strong>Valid ID</strong><br />
+                    </span>
+                </div>
                 <div className={styles['splitter']}>
                     <div className={styles['split-left']}>
                         <div className={styles['name-inputs']} >
@@ -184,12 +204,7 @@ function certificateOfResidencyInputs() {
                         </div>
                     </div>
                 </div>
-                <div className={styles['fieldset-notes']}>
-                    <span className={styles['note']} >Note : Please bring the documents required for getting Certificate of Residency <br />
-                    - <strong>Cedula</strong><br />
-                    - <strong>Valid ID</strong><br />
-                    </span>
-                </div>
+
                 <div className={styles["fieldset-btns"]}>
                     <button type="reset" >Reset</button>
                     <button type="submit" >Request</button>
@@ -200,6 +215,15 @@ function certificateOfResidencyInputs() {
 
 function cedulaInputs() {
     return <fieldset>
+                <div className={styles['fieldset-notes']}>
+                    <span className={styles['note']} >Note : Please bring the documents required for getting Cedula <br />
+                    - <strong>Valid ID</strong><br />
+                    - <strong>Proof of Income</strong><br />
+                    - <strong>Payslip</strong><br />
+                    - <strong>BIR Form 2316</strong><br />
+                    - <strong>Accomplished Community Tax Declaration Form (CTDF) (from City Treasurer's Office)</strong><br />
+                    </span>
+                </div>
                 <div className={styles['splitter']}>
                     <div className={styles['split-left']}>
                         <div className={styles['name-inputs']} >
@@ -230,15 +254,7 @@ function cedulaInputs() {
                         </div>
                     </div>
                 </div>
-                <div className={styles['fieldset-notes']}>
-                    <span className={styles['note']} >Note : Please bring the documents required for getting Cedula <br />
-                    - <strong>Valid ID</strong><br />
-                    - <strong>Proof of Income</strong><br />
-                    - <strong>Payslip</strong><br />
-                    - <strong>BIR Form 2316</strong><br />
-                    - <strong>Accomplished Community Tax Declaration Form (CTDF) (from City Treasurer's Office)</strong><br />
-                    </span>
-                </div>
+
                 <div className={styles["fieldset-btns"]}>
                     <button type="reset" >Reset</button>
                     <button type="submit" >Request</button>
@@ -282,10 +298,13 @@ export default function DocumentRequest() {
         
         if ( parseInt(documentSelect.current.value) === documentTypes.BARANGAY_CLEARANCE ) {
             data['purpose'] = e.target.purpose.value;
+            data['purok'] = e.target.purok.value;
         }
         
         if ( parseInt(documentSelect.current.value) === documentTypes.BUSSINESS_CLEARANCE ) {
-
+            data['bussiness_name'] = e.target['bussiness-name'].value;
+            data['bussiness_address'] = e.target['bussiness-address'].value;
+            data['bussiness_description'] = e.target['bussiness-description'].value;
         }
 
         if ( parseInt(documentSelect.current.value) === documentTypes.CERTIFICATE_OF_RESIDENCY ) {
@@ -318,7 +337,7 @@ export default function DocumentRequest() {
                 <PageTitle title={"Document Request Portal - Request"} />
                 <form ref={form} onSubmit={requestOnSubmit} >
                     <fieldset ref={field} className={styles["fieldset-container"]} >
-                        <p className={styles['note']} >Note : All fields with (<span className={styles['amp']} >*</span>) is required.</p>
+                        <p className={styles['note']} >Note : All fields with (<span className={styles['amp']} >*</span>) is mandatory.</p>
                         <select ref={documentSelect} name="document-type"
                                 onChange={( e ) => changeDocumentType( e.target.value )}
                         >

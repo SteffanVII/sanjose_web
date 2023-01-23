@@ -11,7 +11,7 @@
     height: fit-content;
 
     background-color: white;
-    background-color: rgb(66, 93, 119);
+    background-color: #425d77;
     color: black;
 
     a {
@@ -25,11 +25,11 @@
         display: flex;
         flex-flow: column;
         gap: 40px;
+        align-items: center;
 
         .footer-nav-links {
             display: flex;
-            flex-flow: column;
-            gap: 10px;
+            gap: 20px;
         }
     
         .footer-social-links {
@@ -49,7 +49,7 @@
 
     .texts {
         
-        color: black;
+        color: white;
         font-size: 0.7rem;
 
         padding: 20px;

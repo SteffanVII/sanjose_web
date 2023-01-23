@@ -15,8 +15,9 @@ function Footer() {
                     <a href=""><img src="/facebook.svg" alt="facebook link"/></a>
                     <a href="">Municipaloty of Tuy Official Website</a>
                 </div>
+                <img src="/hotline.jpg" alt="Hotline" />
             </nav>
-            <div className={styles['texts']}>© 2023 Barangay SanJose</div>
+            <div className={styles['texts']}>© 2023 Barangay SanJose. All rights reserved.</div>
 
         </footer>
     );

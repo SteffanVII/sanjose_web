@@ -11,7 +11,7 @@ export function fetchBanners( callback ) {
 export function fetchEvents( callback ) {
     let xhr = new XMLHttpRequest();
 
-    xhr.open( "GET", "http://localhost:5000/public/fetchevents" );
+    xhr.open( "GET", "http://localhost:5000/public/fetchupcomingevents" );
     xhr.onreadystatechange = () => {
         if ( xhr.readyState === 4 ) callback( xhr.status, JSON.parse(xhr.response) );
     }

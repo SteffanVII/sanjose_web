@@ -1,15 +1,31 @@
 #request-portal-index {
+    position: relative;
     
     .request-portal-subpage-links {
 
         display: flex;
         gap: 20px;
         justify-content: center;
+        align-items: center;
         
         margin-top: auto;
         margin-bottom: auto;
 
         width: 100%;
+
+        height: 100%;
+
+        a {
+            padding: 10px;
+            padding-left: 15px;
+            padding-right: 15px;
+
+            border-radius: 4px;
+            border: 1px solid black;
+
+            text-decoration: none;
+            color: black;
+        }
 
     }
 
