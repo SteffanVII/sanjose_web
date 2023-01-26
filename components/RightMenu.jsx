@@ -34,9 +34,9 @@ function RightMenu() {
                 <Link href={'/'} >Home</Link>
                 <NavDropdown title="Services" hrefs={[
                     { href : "/requestportal/", title : "Request Portal" },
-                    { href : "/", title : "Help" }
+                    { href : "/contact", title : "Help" }
                 ]} />
-                <Link href={ '/' } >Contacts</Link>
+                <Link href={ '/contact' } >Contacts</Link>
 
             </nav>
             <div className={styles['events']}>

@@ -12,10 +12,17 @@ function Footer() {
                     <Link href={"/"} >Contacts</Link>
                 </div>
                 <div className={styles['footer-social-links']}>
-                    <a href=""><img src="/facebook.svg" alt="facebook link"/></a>
-                    <a href="">Municipaloty of Tuy Official Website</a>
+                    <a href="https://www.facebook.com/barangay.sanjose.140?mibextid=ZbWKwL" target={"_blank"}><img src="/facebook.svg" alt="facebook link"/></a>
+                    <a href="https://tuybatangas.gov.ph/" target={"_blank"} >Municipality of Tuy Official Website</a>
                 </div>
                 <img src="/hotline.jpg" alt="Hotline" />
+                <span>External links</span>
+                <div className={styles["external_links"]}>
+                    <a target={"_blank"} href={"https://www.batangas.gov.ph/portal/"} ><img src="/pob.jpg" alt="Province of Batangas" /></a>
+                    <a target={"_blank"} href={"https://www.officialgazette.gov.ph/"} ><img src="/gazette.jpg" alt="Official Gazette of the Republic of the Philippines" /></a>
+                    <a target={"_blank"} href={"http://president.gov.ph/"} ><img src="/presiden.jpg" alt="Office of the President of the Philippines" /></a>
+                    <a target={"_blank"} href={"http://www.dilg.gov.ph/"} ><img src="/dilg.jpg" alt="Department of Interior and Local Government" /></a>
+                </div>
             </nav>
             <div className={styles['texts']}>© 2023 Barangay SanJose. All rights reserved.</div>
 

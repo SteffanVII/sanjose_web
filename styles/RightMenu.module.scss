@@ -1,3 +1,5 @@
+@import "../styles/sass-globals";
+
 #menu {
 
     position: relative;
@@ -47,6 +49,7 @@
         a {
             color: black;
             text-decoration: none;
+            font-family: $inria;
 
             transition: transform 0.2s;
 

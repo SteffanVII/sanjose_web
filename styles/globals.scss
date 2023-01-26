@@ -25,13 +25,19 @@ body {
   margin-left: auto;
   margin-right: auto;
 
+  padding-bottom: 20px;
+
   // outline: 1px solid red;
 
   main {
     position: relative;
 
-    display: grid;
-    grid-template-rows: min-content 1fr;
+    // display: grid;
+    // grid-template-rows: min-content 1fr;
+
+    display: flex;
+    flex-flow: column;
+    gap: 20px;
 
     padding-top: 20px;
     padding-left: 20px;

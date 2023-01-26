@@ -1,0 +1,27 @@
+#contacts-tab {
+
+    table {
+
+        thead {
+            th {
+                border: 1px solid black;
+            }
+        }
+
+        tbody {
+            tr {
+                td {
+                    padding: 10px;
+                    border-bottom: 1px solid black;
+                    
+                    &:nth-child(2), &:nth-child(3) {
+                        border-left: 1px solid black;
+                        text-align: center;
+                    }
+                }
+            }
+        }
+
+    }
+
+}
