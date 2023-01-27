@@ -6,7 +6,8 @@ const bannersActions = {
     SET : 0,
     NAVIGATORS : 1,
     NAVIGATE : 2,
-    AUTONAVIGATE : 3
+    AUTONAVIGATE : 3,
+    UPAUSE : 4
 }
 
 function bannersReducer( state, action ) {
