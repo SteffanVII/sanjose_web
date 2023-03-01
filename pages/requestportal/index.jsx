@@ -15,7 +15,7 @@ function RequestPortalIndex() {
             </Head>
             <main>
                 <PageTitle title="Document Request Portal" />
-                <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;This feature has been designed to simplify the process of requesting documents, saving you valuable time and effort. <br /><br />
+                <p className={styles['request-portal-reminder']} >&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;This feature has been designed to simplify the process of requesting documents, saving you valuable time and effort. <br /><br />
 
                 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;This feature will also improve the efficiency of the document request process. You will be able to track the status of your request when your documents are ready for pickup.<br /><br />
 
