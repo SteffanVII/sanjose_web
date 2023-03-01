@@ -181,6 +181,10 @@
 
                 button {
                     float: right;
+
+                    &:nth-child(1) {
+                        margin-left: 5px;
+                    }
                 }
 
                 .code-wrapper {
