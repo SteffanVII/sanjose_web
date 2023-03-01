@@ -273,6 +273,7 @@ export default function DocumentRequest() {
     const form = useRef(null);
     const field = useRef(null);
     const codeCon = useRef(null);
+    const idSpan = useRef(null);
 
     function changeDocumentType( val ) {
         dispatch({
@@ -357,9 +358,19 @@ export default function DocumentRequest() {
                                     });
                                 }}
                         >Close</button>
+                        <button type="button"
+                                onClick={async () => {
+                                    try {
+                                        await navigator.clipboard.writeText(idSpan.current.innerHTML);
+                                    } catch ( err ) {
+                                        console.error(err);
+                                    }
+                                }}
+                        >Copy</button>
                         <p>Request Succesfully sent.</p>
                         <div className={styles["code-wrapper"]} >
                             <span
+                                ref={idSpan}
                                 onClick={( e ) => {
                                     toPng( codeCon.current )
                                     .then( function (dataUrl) {
