@@ -2,7 +2,8 @@ export function sendDocumentRequest( data, callback ) {
 
     let xhr = new XMLHttpRequest();
 
-    xhr.open( 'POST', 'https://api.barangaysanjose.website/requests/requesting' );
+    // xhr.open( 'POST', 'https://api.barangaysanjose.website/requests/requesting' );
+    xhr.open( 'POST', 'http://localhost:8080/requests/requesting' );
     xhr.setRequestHeader( 'content-type', 'application/json' );
     xhr.onreadystatechange = () => {
         if ( xhr.readyState === 4 && xhr.status === 200 ) {
@@ -17,7 +18,8 @@ export function checkRequestStatus( id, callback ) {
 
     let xhr = new XMLHttpRequest();
 
-    xhr.open( "POST", "https://api.barangaysanjose.website/requests/checking" );
+    // xhr.open( "POST", "https://api.barangaysanjose.website/requests/checking" );
+    xhr.open( "POST", "http://localhost:8080/requests/checking" );
     xhr.setRequestHeader( "content-type", "application/json" );
     xhr.onreadystatechange = () => {
         if ( xhr.readyState === 4 && xhr.status === 200 ) {
