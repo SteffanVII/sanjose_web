@@ -1,7 +1,7 @@
 import download from "downloadjs";
 import { toPng } from "html-to-image";
 import Head from "next/head";
-import { useReducer, useRef } from "react";
+import { useReducer, useRef, useState } from "react";
 import { sendDocumentRequest } from "../../backend/requests";
 import PageTitle from "../../components/PageTitle";
 import RightMenu from "../../components/RightMenu";
@@ -51,6 +51,7 @@ function requestPortalReducer( state, action ) {
 }
 
 function barangayClearanceInputs() {
+    
 
     return <fieldset>
                 <div className={styles['fieldset-notes']}>
@@ -324,6 +325,8 @@ export default function DocumentRequest() {
         } );
     }
 
+    const [ open, setOpen ] = useState(false);
+
     return (
         <div className="page"
             id={styles['document-request-portal-page']}    
@@ -335,7 +338,7 @@ export default function DocumentRequest() {
                 <link rel="icon" href="/favicon.ico" />
             </Head>
             <main>
-                <PageTitle title={"Document Request Portal - Request"} />
+                <PageTitle title={"Document Request Portal - Request"} setOpen={setOpen} open={open} />
                 <form ref={form} onSubmit={requestOnSubmit} >
                     <fieldset ref={field} className={styles["fieldset-container"]} >
                         <p className={styles['note']} >Note : All fields with (<span className={styles['amp']} >*</span>) is mandatory.</p>
@@ -384,7 +387,7 @@ export default function DocumentRequest() {
                 </form>
 
             </main>
-            <RightMenu/>
+            <RightMenu setOpen={setOpen} open={open}/>
         </div>
     );
 }

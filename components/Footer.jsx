@@ -15,7 +15,7 @@ function Footer() {
                     <a href="https://www.facebook.com/barangay.sanjose.140?mibextid=ZbWKwL" target={"_blank"}><img src="/facebook.svg" alt="facebook link"/></a>
                     <a href="https://tuybatangas.gov.ph/" target={"_blank"} >Municipality of Tuy Official Website</a>
                 </div>
-                <img src="/hotline.jpg" alt="Hotline" />
+                <img id={styles["hotline"]} src="/hotline.jpg" alt="Hotline" />
                 <span>External links</span>
                 <div className={styles["external_links"]}>
                     <a target={"_blank"} href={"https://www.batangas.gov.ph/portal/"} ><img src="/pob.jpg" alt="Province of Batangas" /></a>

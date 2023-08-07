@@ -3,8 +3,12 @@ import Banners from '../components/Banners';
 import PageTitle from '../components/PageTitle';
 import RightMenu from '../components/RightMenu';
 import styles from "../styles/Index.module.scss";
+import { useState } from 'react';
 
 export default function Home() {
+
+  const [ open, setOpen ] = useState(false);
+
   return (
     <div className={"page"}>
       <Head>
@@ -14,7 +18,7 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <main>
-        <PageTitle title="Home" />
+        <PageTitle title="Home" setOpen={setOpen} open={open} />
         <h1 className={styles['welcome-h1']}>Welcome to Barangay SanJose Official Website 👏 </h1>
         <Banners/>
         <div className={styles["covid-infographics"]}>
@@ -30,7 +34,7 @@ export default function Home() {
                 </div>
         </div>
       </main>
-      <RightMenu/>
+      <RightMenu setOpen={setOpen} open={open}/>
     </div>
   )
 }

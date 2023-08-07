@@ -1,8 +1,15 @@
 import styles from "../styles/PageTitle.module.scss";
 
-function PageTitle( { title } ) {
+function PageTitle( { title, open, setOpen } ) {
     return (
-        <h2 className={styles['page-title']}>{title}</h2>
+        <div className={styles['page-title']}>
+            <h2>{title}</h2>
+            <button onClick={() => {
+                setOpen(!open)
+            }}>
+                <img src="/san_jose_seal.png" />
+            </button>
+        </div>
     );
 }
 

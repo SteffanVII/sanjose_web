@@ -5,7 +5,7 @@ import styles from "../styles/RightMenu.module.scss";
 import EventNav from "./EventNav";
 import NavDropdown from "./NavDropdown";
 
-function RightMenu() {
+function RightMenu({ open, setOpen }) {
 
     const [ events, setEvents ] = useState([]);
 
@@ -25,10 +25,14 @@ function RightMenu() {
     }, []);
 
     return (
-        <header id={styles['menu']} >
-            <div id={styles['barangay_seal_wrapper']} >
+        <header id={styles['menu']} className={ open ? styles['open'] : '' } >
+            <button id={styles['barangay_seal_wrapper']}
+                    onClick={() => {
+                        setOpen(!open);
+                    }}
+            >
                 <img src="/san_jose_seal.png" />
-            </div>
+            </button>
             <h1>Barangay SanJose, <span>Tuy Batangas</span></h1>
             <nav>
                 <Link href={'/'} >Home</Link>

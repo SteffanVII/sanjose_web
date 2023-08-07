@@ -40,6 +40,7 @@ function parseRequestStatus( status ) {
 function CheckRequestStatusPage() {
 
     const [ result, setResult ] = useState(null);
+    const [ open, setOpen ] = useState(false);
 
     function idOnSubmit( e ) {
         e.preventDefault();
@@ -77,7 +78,7 @@ function CheckRequestStatusPage() {
                 <title>Barangay SanJose | Check Request Status</title>
             </Head>
             <main>
-                <PageTitle title={"Document Request Portal - Check Status"} />
+                <PageTitle title={"Document Request Portal - Check Status"} setOpen={setOpen} open={open} />
                 <form onSubmit={idOnSubmit} >
                     <div className={styles['id-input-wrapper']}>
                         <label htmlFor="request-id-input">Request ID</label>
@@ -89,7 +90,7 @@ function CheckRequestStatusPage() {
                     </div>
                 </form>
             </main>
-            <RightMenu/>
+            <RightMenu setOpen={setOpen} open={open}/>
         </div>
     );
 

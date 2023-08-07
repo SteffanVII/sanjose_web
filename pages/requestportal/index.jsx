@@ -3,8 +3,11 @@ import RightMenu from "../../components/RightMenu";
 import PageTitle from "../../components/PageTitle";
 import Link from "next/link";
 import styles from "../../styles/RequesPortanlIndex.module.scss";
+import { useState } from "react";
 
 function RequestPortalIndex() {
+
+    const [ open, setOpen ] = useState(false);
 
     return (
         <div className="page"
@@ -14,7 +17,7 @@ function RequestPortalIndex() {
                 <title>Barangay SanJose | Request Portal</title>
             </Head>
             <main>
-                <PageTitle title="Document Request Portal" />
+                <PageTitle title="Document Request Portal" setOpen={setOpen} open={open}/>
                 <p className={styles['request-portal-reminder']} >&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;This feature has been designed to simplify the process of requesting documents, saving you valuable time and effort. <br /><br />
 
                 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;This feature will also improve the efficiency of the document request process. You will be able to track the status of your request when your documents are ready for pickup.<br /><br />
@@ -27,7 +30,7 @@ function RequestPortalIndex() {
                     <Link href={"/requestportal/checkstatus"} >Check Request Status</Link>
                 </div>
             </main>
-            <RightMenu/>
+            <RightMenu setOpen={setOpen} open={open}/>
         </div>
     );
 

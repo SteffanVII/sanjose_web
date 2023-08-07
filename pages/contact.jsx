@@ -2,8 +2,11 @@ import Head from "next/head";
 import PageTitle from "../components/PageTitle";
 import RightMenu from "../components/RightMenu";
 import styles from "../styles/ContactsTab.module.scss";
+import { useState } from "react";
 
 export default function ContactsTab() {
+
+    const [ open, setOpen ] = useState(false);
 
     return (
         <div className="page"
@@ -13,7 +16,7 @@ export default function ContactsTab() {
                 <title>Barangay SanJose | Contacts</title>
             </Head>
             <main>
-                <PageTitle title={"Contacts"}/>
+                <PageTitle title={"Contacts"} setOpen={setOpen} open={open}/>
                 <h3 className={styles['trunklines']}>Trunkline: (043)276-0047 / (043)276-0100 / (043)276-0104 / (043)276-0102</h3>
                 <table>
                     <thead>
@@ -102,7 +105,7 @@ export default function ContactsTab() {
                     </tbody>
                 </table>
             </main>
-            <RightMenu/>
+            <RightMenu setOpen={setOpen} open={open}/>
         </div>
     );
 
